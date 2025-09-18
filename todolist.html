@@ -41,16 +41,15 @@
 
     function addTaskItem(taskText){
         const li = document.createElement("li");
-        li.textContent = taskText;
+        const taskSpan = document.createElement("span");
+        taskSpan.textContent = taskText;
+        li.appendChild(taskSpan);
 
         document.getElementById("taskList").appendChild(li);
         console.log("addTaskItem() called ->: ", taskText, Date());
 
         const deleteBtn = createDeleteButton(li);
         li.appendChild(deleteBtn);
-
-        const taskSpan = document.createElement("span");
-        taskSpan.textContent = taskText;
 
         const editBtn = createEditButton(li,taskSpan);
         li.appendChild(editBtn);
