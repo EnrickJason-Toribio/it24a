@@ -53,7 +53,7 @@
 
                 const marker = L.marker([pin.lat,pin.lng]).addTo(map);
                 const img = `<img src='${pin.img}' class="popup-image">`;
-                marker.bindPopup(`${img}<br><b> ${pin.title} </b><br> ${pin.description}`);
+                marker.bindPopup(`${img}<br><b> ${pin.title} </b><br> ${pin.description}<br> ${pin.locationType}`);
                 console.log(`${pin.name} Loaded ` +Date());
 
                 markerGroups[type].addLayer(marker);
